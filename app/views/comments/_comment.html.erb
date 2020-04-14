@@ -7,12 +7,13 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
+  <%if comment.commenter == 'ahmed' || comment.commenter == 'hazem' %>
   <%= link_to 'Destroy Comment', [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
                
-  <%= link_to 'Destroy Commmmment', [comment.article,comment] ,method: :get %>
+  <%= link_to 'Destroy Commmmment', [comment.article,comment] ,method: :delete %>
  <%= link_to 'deit Commmmment',  edit_article_comment_path(comment.article_id , comment.id) ,method: :get %>
-
+<% end %>
   <hr>
 edit_article_comment_path
