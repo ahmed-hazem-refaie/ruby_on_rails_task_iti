@@ -1,0 +1,40 @@
+<h1>new </h1>
+<%if @user %>
+<p>hhhhh</p>
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%end%>
+
+<%= form_with scope: :article,url: '/article/create', local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+
+  </p>
+ 
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+
+ <%for a in 1..5 do%>
+    <%=@name%>
+ 
+   <%end%>
+
+  <p>
+  <input type='text' name='title_confirmation' placeholder='my data'></input>
+    <%= form.submit :'my_):_save' %>
+  </p>
+<% end %>

@@ -1,0 +1,18 @@
+<p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+               
+  <%= link_to 'Destroy Commmmment', [comment.article,comment] ,method: :get %>
+ <%= link_to 'deit Commmmment',  edit_article_comment_path(comment.article_id , comment.id) ,method: :get %>
+
+  <hr>
+edit_article_comment_path
